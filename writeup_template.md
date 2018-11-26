@@ -2,16 +2,10 @@
 
 ## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
 
 [//]: # (Image References)
 
@@ -21,11 +15,20 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describing the pipeline. The draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of below steps.
+#Converting the image to Grayscale
+#Applying Gaussian Smoothing, setting up the Kernel Size
+#Performing Canny Edge Detection on the result of Gaussian Smoothing alongwith the parameters of low_threshold and high_threshold
+#Creating the Region of Interest, putting it into vertices by adjusting the coordinates
+#Applying the Hough Transform
+#Averaging and Extrapolating the lines and applying them to the original image.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+#first seperating the line segments on the basis of their slope, negative slope for right lane and positive for the left lane
+#Creating the coordinates using the array the that we got in previous step
+#Then have calculated the average of the positions for the lines for the coordinates
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
